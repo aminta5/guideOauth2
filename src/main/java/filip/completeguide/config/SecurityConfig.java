@@ -1,6 +1,6 @@
 package filip.completeguide.config;
-
 import filip.completeguide.service.DefaultAutheticationProvider;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -15,8 +15,8 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 @EnableWebSecurity
 @EnableGlobalMethodSecurity(prePostEnabled = true)
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
-    /*@Autowired
-    private UserDetailsService userDetailsService;*/
+    @Autowired
+    private UserDetailsService userDetailsService;
 
     @Override
     @Bean
@@ -26,6 +26,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Autowired
     public void globalUserDetails(AuthenticationManagerBuilder auth) throws Exception{
-        auth.authenticationProvider(new DefaultAutheticationProvider());
+        auth.authenticationProvider(userDetailsService);
     }
 }

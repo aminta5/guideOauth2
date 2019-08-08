@@ -1,3 +1,4 @@
+/*
 package filip.completeguide.service;
 
 import org.springframework.security.authentication.AuthenticationProvider;
@@ -49,3 +50,4 @@ public class DefaultAutheticationProvider implements AuthenticationProvider {
         return Collections.emptyList();
     }
 }
+*/

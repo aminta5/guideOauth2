@@ -1,7 +1,7 @@
 databaseChangeLog:
   - changeSet:
       id: oauth2 jdbc token store
-      author: sebastian
+      author: filip
       changes:
         - createTable:
             tableName: oauth_access_token
@@ -45,7 +45,7 @@ databaseChangeLog:
 
   - changeSet:
       id: users store
-      author: sebastian
+      author: filip
       changes:
         - createTable:
             tableName: app_user
