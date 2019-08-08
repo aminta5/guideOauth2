@@ -17,6 +17,9 @@ import org.springframework.security.oauth2.config.annotation.web.configurers.Aut
 import org.springframework.security.oauth2.provider.token.TokenStore;
 import org.springframework.security.oauth2.provider.token.store.InMemoryTokenStore;
 
+import javax.sql.DataSource;
+
+
 @Configuration
 @EnableAuthorizationServer
 public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdapter {
@@ -29,8 +32,10 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
     private static final int VALID_FOREVER = -1;
 
     @Autowired
-    @Qualifier(BeanIds.AUTHENTICATION_MANAGER)
     private AuthenticationManager authManager;
+
+    @Autowired
+    private DataSource dataSource;
 
     @Override
     //this code configures client app with name id secret etc
